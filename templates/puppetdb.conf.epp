@@ -1,0 +1,6 @@
+{
+    "puppetdb": {
+        "server_urls": "https://<%= $pe_server_certname %>:8081",
+        "cacert": "/etc/puppetlabs/puppet/ssl/certs/ca.pem",
+    }
+}

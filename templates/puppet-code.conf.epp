@@ -1,0 +1,5 @@
+{
+    "service-url": "https://<%= $pe_server_certname %>:8170/code-manager",
+    "cacert": "/etc/puppetlabs/puppet/ssl/certs/ca.pem",
+    "token-file": "<%= $access_token_path %>",
+}

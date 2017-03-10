@@ -1,0 +1,14 @@
+{
+  "name": "beersy-pe_client_tools_easy_setup",
+  "version": "0.1.0",
+  "author": "beersy",
+  "summary": "Easily install PE client tools",
+  "license": "Apache-2.0",
+  "source": "",
+  "project_page": null,
+  "issues_url": null,
+  "dependencies": [
+    {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0",
+     "name":"puppet-download_file","version_requirement":">= 2.1.0"}
+  ]
+}

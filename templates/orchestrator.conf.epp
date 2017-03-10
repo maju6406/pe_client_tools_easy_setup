@@ -1,0 +1,10 @@
+{
+    "options": {
+        "service-url": "https://<%= $pe_server_certname %>:8143",
+        "environment": "production",
+        "cacert": "/etc/puppetlabs/puppet/ssl/certs/ca.pem",
+        "token-file": "<%= $access_token_path %>",
+        "color": true,
+        "noop": false
+    }
+}

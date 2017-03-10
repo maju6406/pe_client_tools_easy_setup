@@ -1,0 +1,4 @@
+{
+    "service-url": "https://<%= $pe_server_certname %>:4433/rbac-api",
+    "certificate-file": "/etc/puppetlabs/puppet/ssl/certs/ca.pem"
+}
