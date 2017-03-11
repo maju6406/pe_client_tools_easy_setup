@@ -1,11 +1,11 @@
 {
   "name": "beersy-pe_client_tools_easy_setup",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "author": "beersy",
   "summary": "Easily install PE client tools",
   "license": "Apache-2.0",
-  "source": "",
-  "project_page": null,
-  "issues_url": null,
+  "source": "https://github.com/maju6406/pe_client_tools_easy_setup",
+  "project_page": "https://github.com/maju6406/pe_client_tools_easy_setup",
+  "issues_url": "https://github.com/maju6406/pe_client_tools_easy_setup/issues",
   "dependencies": []
 }

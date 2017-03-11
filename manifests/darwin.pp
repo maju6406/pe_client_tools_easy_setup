@@ -28,30 +28,22 @@ class pe_client_tools_easy_setup::darwin (
 
   file { '/etc/puppetlabs/client-tools/orchestrator.conf':
     ensure  => file,
-    content => epp('pe_client_tools_easy_setup/orchestrator.conf.epp',
-                  {'pe_server_certname'=> $pe_server_certname,
-                   'access_token_path' => $access_token_path}),
+    content => epp('pe_client_tools_easy_setup/orchestrator.conf.epp', {'pe_server_certname'=> $pe_server_certname, 'access_token_path' => $access_token_path}),
   }
 
   file { '/etc/puppetlabs/client-tools/puppet-access.conf':
     ensure  => file,
-    content => epp('pe_client_tools_easy_setup/puppet-access.conf.epp',
-                  {'pe_server_certname'=> $pe_server_certname,
-                   'access_token_path' => $access_token_path}),
+    content => epp('pe_client_tools_easy_setup/puppet-access.conf.epp', {'pe_server_certname'=> $pe_server_certname, 'access_token_path' => $access_token_path}),
   }
 
   file { '/etc/puppetlabs/client-tools/puppet-code.conf':
     ensure  => file,
-    content => epp('pe_client_tools_easy_setup/puppet-code.conf.epp',
-                  {'pe_server_certname'=> $pe_server_certname,
-                   'access_token_path' => $access_token_path}),
+    content => epp('pe_client_tools_easy_setup/puppet-code.conf.epp', {'pe_server_certname'=> $pe_server_certname, 'access_token_path' => $access_token_path}),
   }
 
   file { '/etc/puppetlabs/client-tools/puppetdb.conf':
     ensure  => file,
-    content => epp('pe_client_tools_easy_setup/puppetdb.conf.epp',
-                  {'pe_server_certname'=> $pe_server_certname,
-                   'access_token_path' => $access_token_path}),
+    content => epp('pe_client_tools_easy_setup/puppetdb.conf.epp', {'pe_server_certname'=> $pe_server_certname, 'access_token_path' => $access_token_path}),
   }
 
   file { $client_tools_package_path: }
