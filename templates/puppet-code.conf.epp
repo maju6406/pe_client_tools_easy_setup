@@ -1,5 +1,9 @@
 {
     "service-url": "https://<%= $pe_server_certname %>:8170/code-manager",
+    <% if $kernel == 'windows' { -%>
+    "cacert": "C:\\ProgramData\\PuppetLabs\\puppet\\etc\\ssl\\certs\\ca.pem",
+    <% } else { -%>
     "cacert": "/etc/puppetlabs/puppet/ssl/certs/ca.pem",
-    "token-file": "<%= $access_token_path %>",
+    <% } -%>
+    "token-file": "<%= $access_token_path %>"
 }

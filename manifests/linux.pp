@@ -8,41 +8,51 @@ class pe_client_tools_easy_setup::linux  (
 
   file { '/etc/puppetlabs/puppet/ssl/certs':
     ensure => 'directory',
-    mode   => '0750',
+  }
+
+  file { '/etc/puppetlabs/client-tools':
+    ensure => 'directory',
   }
 
   exec { 'create ca.pem file':
-    command => "curl -k -o ca.pem https://${pe_server_certname}:8140/puppet-ca/v1/certificate/ca",
+    command => "/usr/bin/curl -k -o /etc/puppetlabs/puppet/ssl/certs/ca.pem https://${pe_server_certname}:8140/puppet-ca/v1/certificate/ca",
     creates => '/etc/puppetlabs/puppet/ssl/certs/ca.pem',
-    mode    => '0444',
     require => File['/etc/puppetlabs/puppet/ssl/certs'],
+  }
+
+  file { '/etc/puppetlabs/puppet/ssl/certs/ca.pem':
+    ensure  => file,
+    mode    => '0444',
+    require => Exec['create ca.pem file'],
   }
 
   file { '/etc/puppetlabs/client-tools/orchestrator.conf':
     ensure  => file,
-    content => epp('orchestrator.conf.epp'),
+    content => epp('pe_client_tools_easy_setup/orchestrator.conf.epp',
+                  {'pe_server_certname' => $pe_server_certname, 'access_token_path' => $access_token_path}),
   }
 
   file { '/etc/puppetlabs/client-tools/puppet-access.conf':
     ensure  => file,
-    content => epp('puppet-access.conf.epp'),
+    content => epp('pe_client_tools_easy_setup/puppet-access.conf.epp', {'pe_server_certname' => $pe_server_certname, 'access_token_path' => $access_token_path}),
   }
 
   file { '/etc/puppetlabs/client-tools/puppet-code.conf':
     ensure  => file,
-    content => epp('puppet-code.conf.epp'),
+    content => epp('pe_client_tools_easy_setup/puppet-code.conf.epp', {'pe_server_certname' => $pe_server_certname, 'access_token_path' => $access_token_path}),
   }
 
   file { '/etc/puppetlabs/client-tools/puppetdb.conf':
     ensure  => file,
-    content => epp('puppetdb.conf.epp'),
+    content => epp('pe_client_tools_easy_setup/puppetdb.conf.epp', {'pe_server_certname' => $pe_server_certname, 'access_token_path' => $access_token_path}),
   }
 
   file { $client_tools_package_path: }
 
   package { 'client tools rpm':
-    source  => $client_tools_package_path,
-    require => File[$client_tools_package_path]
+    source   => $client_tools_package_path,
+    provider => 'rpm',
+    require  => File[$client_tools_package_path]
   }
 
 }

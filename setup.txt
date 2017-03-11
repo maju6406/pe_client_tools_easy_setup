@@ -1,0 +1,19 @@
+Mac
+sudo su -
+curl -k -O http://shundor.com/beersy-pe_client_tools_easy_setup-0.1.0.tar.gz
+curl -k -O http://shundor.com/pe-client-tools-16.5.2-1.osx10.11.dmg
+puppet module install /var/root/beersy-pe_client_tools_easy_setup-0.1.0.tar.gz
+puppet apply -e "class { 'pe_client_tools_easy_setup': pe_server_certname => 'master.inf.puppet.vm', client_tools_package_path => '/var/root/pe-client-tools-16.5.2-1.osx10.11.dmg'}"
+
+Linux
+sudo su -
+curl -k -O http://shundor.com/beersy-pe_client_tools_easy_setup-0.1.0.tar.gz
+curl -k -O http://shundor.com/pe-client-tools-16.5.2-1.el7.x86_64.rpm
+puppet module install /root/beersy-pe_client_tools_easy_setup-0.1.0.tar.gz
+puppet apply -e "class { 'pe_client_tools_easy_setup': pe_server_certname => 'master.inf.puppet.vm', client_tools_package_path => '/root/pe-client-tools-16.5.2-1.el7.x86_64.rpm'}"
+
+Windows
+http://shundor.com/beersy-pe_client_tools_easy_setup-0.1.0.tar.gz
+http://shundor.com/pe-client-tools-16.5.2-x64.msi
+puppet module install C:\beersy-pe_client_tools_easy_setup-0.1.0.tar.gz
+puppet apply -e "class { 'pe_client_tools_easy_setup': pe_server_certname => 'master.inf.puppet.vm', client_tools_package_path => 'C:\\pe-client-tools-16.5.2-x64.msi'}"
