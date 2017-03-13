@@ -1,11 +1,79 @@
 {
   "name": "beersy-pe_client_tools_easy_setup",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "beersy",
   "summary": "Easily install PE client tools",
   "license": "Apache-2.0",
   "source": "https://github.com/maju6406/pe_client_tools_easy_setup",
   "project_page": "https://github.com/maju6406/pe_client_tools_easy_setup",
   "issues_url": "https://github.com/maju6406/pe_client_tools_easy_setup/issues",
-  "dependencies": []
+  "dependencies": [],
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "RedHat",
+      "operatingsystemrelease": [
+        "5",
+        "6",
+        "7"
+      ]
+    },
+    {
+      "operatingsystem": "CentOS",
+      "operatingsystemrelease": [
+        "5",
+        "6",
+        "7"
+      ]
+    },
+    {
+      "operatingsystem": "OracleLinux",
+      "operatingsystemrelease": [
+        "5",
+        "6",
+        "7"
+      ]
+    },
+    {
+      "operatingsystem": "Scientific",
+      "operatingsystemrelease": [
+        "5",
+        "6",
+        "7"
+      ]
+    },
+    {
+      "operatingsystem": "Debian",
+      "operatingsystemrelease": [
+        "6",
+        "7"
+      ]
+    },
+    {
+      "operatingsystem": "Ubuntu",
+      "operatingsystemrelease": [
+        "10.04",
+        "12.04",
+        "14.04"
+      ]
+    },
+    {
+      "operatingsystem": "Darwin",
+      "operatingsystemrelease": ["10.9", "10.10", "10.11", "10.12"]
+    },
+    {
+      "operatingsystem": "Windows",
+      "operatingsystemrelease": [
+        "Server 2008",
+        "Server 2008 R2",
+        "Server 2012",
+        "Server 2012 R2"
+      ]
+    }
+  ],
+  "requirements": [
+    {
+      "name": "pe",
+      "version_requirement": ">= 2016.4.0"
+    }
+  ]
 }

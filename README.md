@@ -47,4 +47,5 @@ If you are not using hiera you can specify the parameters at the command line:
 
 ## Release Notes/Contributors/Etc. **Optional**
 
+1.0.1 Updated metadata.json with supported OS & PE versions
 1.0.0 Initial release
