@@ -45,7 +45,7 @@ If you are using hiera, run this command:
 If you are not using hiera you can specify the parameters at the command line:  
 `puppet apply -e "class { 'pe_client_tools_easy_setup': pe_server_certname => 'PE_SERVER_CERTNAME', client_tools_package_path => 'CLIENT_TOOLS_PACKAGE_PATH', access_token_path => 'ACCESS_TOKEN_PATH'}"`
 
-## Release Notes/Contributors/Etc. **Optional**
+## Release Notes/Contributors/Etc.
 
 1.0.1 Updated metadata.json with supported OS & PE versions
 1.0.0 Initial release
