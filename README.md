@@ -13,14 +13,24 @@
 1. [Development - Guide for contributing to the module](#development)
 
 ## Description
-This module installs and configures PE client tools on your machine
+This module installs and configures Puppet Enterprise (PE) client tools on your machine.
 ## Setup
 ### What pe_client_tools_easy_setup affects
 
-This module will install files into /etc/puppetlabs/client-tools and /etc/puppetlabs/puppet/ssl/certs
+This module will install files into:  
+
+Linux/Mac OS X
+* /etc/puppetlabs/client-tools
+* /etc/puppetlabs/puppet/ssl/certs
+
+Windows  
+* C:\ProgramData\PuppetLabs\client-tools
+* C:\ProgramData\PuppetLabs\puppet\etc\ssl\certs
 
 ### Setup Requirements
-This module assumes PE is already installed, and the agent is running on the client.
+This module assumes PE is already installed, and the agent is running on the client. Before installing and running the module you will need to:
+* download the appropriate [client tools](https://puppet.com/download-puppet-enterprise) package.
+* create the appropriate user roles and permissions for use with the client tools in the [PE Console](https://docs.puppet.com/pe/latest/rbac_intro.html).
 
 #### Pre-Install Steps
 Install this module by running these command first on the master as root:  
@@ -47,5 +57,5 @@ If you are not using hiera you can specify the parameters at the command line:
 
 ## Release Notes/Contributors/Etc.
 
-1.0.1 Updated metadata.json with supported OS & PE versions
+1.0.1 Updated metadata.json with supported OS & PE versions  
 1.0.0 Initial release
