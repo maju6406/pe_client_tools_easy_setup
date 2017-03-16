@@ -34,6 +34,7 @@ class pe_client_tools_easy_setup (
     String $client_tools_package_path,
     String $pe_server_certname = 'master',
     String $access_token_path  = '~/.puppetlabs/token',
+    String $certname = 'ca.pem',
 ){
 
   case $::kernel {
@@ -42,6 +43,7 @@ class pe_client_tools_easy_setup (
         client_tools_package_path => $client_tools_package_path,
         pe_server_certname        => $pe_server_certname,
         access_token_path         => $access_token_path,
+        certname                  => $certname,
       }
     }
     'Linux': {
@@ -49,6 +51,7 @@ class pe_client_tools_easy_setup (
         client_tools_package_path => $client_tools_package_path,
         pe_server_certname        => $pe_server_certname,
         access_token_path         => $access_token_path,
+        certname                  => $certname,
       }
     }
     'Darwin': {
@@ -56,6 +59,7 @@ class pe_client_tools_easy_setup (
         client_tools_package_path => $client_tools_package_path,
         pe_server_certname        => $pe_server_certname,
         access_token_path         => $access_token_path,
+        certname                  => $certname,
       }
     }
     default: {
@@ -63,6 +67,7 @@ class pe_client_tools_easy_setup (
         client_tools_package_path => $client_tools_package_path,
         pe_server_certname        => $pe_server_certname,
         access_token_path         => $access_token_path,
+        certname                  => $certname,
       }
     }
   }

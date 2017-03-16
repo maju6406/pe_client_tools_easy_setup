@@ -3,9 +3,9 @@
         "service-url": "https://<%= $pe_server_certname %>:8143",
         "environment": "production",
         <% if $kernel == 'windows' { -%>
-        "cacert": "C:\\ProgramData\\PuppetLabs\\puppet\\etc\\ssl\\certs\\ca.pem",
+        "cacert": "C:\\ProgramData\\PuppetLabs\\puppet\\etc\\ssl\\certs\\<%= $certname %>",
         <% } else { -%>
-        "cacert": "/etc/puppetlabs/puppet/ssl/certs/ca.pem",
+        "cacert": "/etc/puppetlabs/puppet/ssl/certs/<%= $certname %>",
         <% } -%>
         "token-file": "<%= $access_token_path %>",
         "color": true,

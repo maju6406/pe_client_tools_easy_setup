@@ -1,8 +1,8 @@
 {
     "service-url": "https://<%= $pe_server_certname %>:4433/rbac-api",
     <% if $kernel == 'windows' { -%>
-    "certificate-file": "C:\\ProgramData\\PuppetLabs\\puppet\\etc\\ssl\\certs\\ca.pem"
+    "certificate-file": "C:\\ProgramData\\PuppetLabs\\puppet\\etc\\ssl\\certs\\<%= $certname %>"
     <% } else { -%>
-    "certificate-file": "/etc/puppetlabs/puppet/ssl/certs/ca.pem"
+    "certificate-file": "/etc/puppetlabs/puppet/ssl/certs/<%= $certname %>"
     <% } -%>
 }

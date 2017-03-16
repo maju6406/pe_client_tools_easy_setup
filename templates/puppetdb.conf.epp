@@ -2,9 +2,9 @@
     "puppetdb": {
         "server_urls": "https://<%= $pe_server_certname %>:8081",
         <% if $kernel == 'windows' { -%>
-        "cacert": "C:\\ProgramData\\PuppetLabs\\puppet\\etc\\ssl\\certs\\ca.pem"
+        "cacert": "C:\\ProgramData\\PuppetLabs\\puppet\\etc\\ssl\\certs\\<%= $certname %>"
         <% } else { -%>
-        "cacert": "/etc/puppetlabs/puppet/ssl/certs/ca.pem"
+        "cacert": "/etc/puppetlabs/puppet/ssl/certs/<%= $certname %>"
         <% } -%>
     }
 }
